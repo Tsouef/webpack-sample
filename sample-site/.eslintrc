@@ -1,0 +1,114 @@
+{
+
+  // Extend existing configuration
+  // from ESlint and eslint-plugin-react defaults.
+  "extends": [
+    "eslint:recommended", "plugin:react/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,                       // @todo Doit être spécifique à Workflow only
+    "shelljs": true                     // @todo Doit être spécifique à Workflow only
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/jsx-uses-vars": 1,
+
+    // Possible Errors
+
+    "semi": [2, "always"],
+    "comma-dangle": [1, "never"],       // Disallow trailing commas in object literals         // var obj = { name: 'coucou', }
+    "no-cond-assign": 1,                // Disallow assignment in conditional expressions      // if (a = 5) { ... }
+    "no-console": 0,                    // Allow console.log
+    "no-dupe-keys": 1,                  // Disallow duplicate keys when creating object        // var obj = { name: 'michel', name: 'laurence' }
+    "no-empty": 1,                      // Disallow empty statements                           // if (isCool) { }
+    "no-extra-semi": 1,                 // Disallow unnecessary semicolons                     // var coucou = 'hello';;
+    "no-func-assign": 1,                // Disallow overwriting functions written as function declarations
+    "no-invalid-regexp": 1,             // Disallow invalid regular expression strings in the RegExp constructor
+    "no-irregular-whitespace": 1,       // Disallow irregular whitespace outside of strings and comments
+    "no-sparse-arrays": 2,              // Disallow sparse arrays                              // var items = [,,];
+    "no-unreachable": 2,                // Disallow unreachable statements after a return, throw, continue, or break statement
+    "valid-typeof": 2,                  // Disallow invalid string with typeof
+    "no-warning-comments": [1, { "terms": ["@dev"], "location": "start" }], // @todo
+
+    // Best Practices
+
+    "curly": [2, "all"],                // Disallow no curly braces on if statements
+    "dot-notation": 1,                  // Encourages use of dot notation whenever possible
+    "eqeqeq": 2,                        // Require the use of === and !==
+    "guard-for-in": 2,                  // Make sure for-in loops have an if statement
+    "no-else-return": 1,                // Disallow else after a return in an if
+    "no-eval": 2,                       // Disallow use of eval()
+    "new-cap": [ 1, {
+      "newIsCap": true,
+      "capIsNew": false
+    }],
+    "no-floating-decimal": 1,           // Disallow the use of leading or trailing decimal points in numeric literals
+    "no-iterator": 1,                   // Disallow usage of __iterator__ property
+    "no-lone-blocks": 1,                // Disallow unnecessary nested blocks
+    "no-multi-spaces": [1, {            // Disallow use of multiple spaces
+      "exceptions": {
+        "VariableDeclarator": true,
+        "ImportDeclaration": true
+      }
+    }],
+    "no-redeclare": 1,                  // Disallow declaring the same variable more then once
+    "wrap-iife": [1, "inside"],         // Require immediate function invocation to be wrapped in parentheses
+    "yoda": 0,                          // if ('something' === variable) ...
+
+    // Strict mode
+
+    "strict": [2, "never"],               // Strict mode (never)
+
+    // Variables
+
+    "no-undef": 1,                      // Disallow use of undeclared variables
+    "no-undef-init": 1,                 // Disallow use of undefined when initializing variables
+    "no-unused-vars": 1,                // Disallow declaration of variables that are not used in the code
+    "no-use-before-define": [1, "nofunc"],          // Disallow use of variables before they are defined
+
+    // Node
+
+    "no-mixed-requires": 0,
+    "no-path-concat": 1,
+
+    // Stylistic Issues
+
+    "indent": [2, 4, {"SwitchCase": 1}],
+    "quotes": [1, "single"],                                                   // Single quotes
+    "brace-style": [2, "stroustrup", { "allowSingleLine": true }],             // "else" à la ligne
+    "camelcase": [2, {"properties": "always"}],                                // Toutes les variables doivent être en camelCase
+    "comma-spacing": [2, { "before": false, "after": true }],
+    "consistent-this": [0, "self"],                                            // Toujours "self", jamais "that" ou autre
+    "eol-last": 1,                                                             // Enforce newline at the end of file, with no multiple empty lines
+    "no-array-constructor": 1,                                                 // Disallow use of the Array constructor
+    "no-lonely-if": 1,                                                         // Disallow if as the only statement in an else block (off by default)
+    "no-mixed-spaces-and-tabs": 2,
+    "no-multiple-empty-lines": 2,
+    "no-spaced-func": 1,                                                       // Jamais d'espace entre l'appel d'une fonction et la parenthèse ouvrante de ses paramètres
+    "space-before-function-paren": [2, "never"],
+    "no-trailing-spaces": 1,                                                   // Disallow trailing whitespace at the end of lines
+    "keyword-spacing": [1, {"before": true, "after": true, "overrides": {}}], // if () ... else ()
+    "object-curly-spacing": [2, "always"],
+    "computed-property-spacing": [2, "never"],
+    "array-bracket-spacing": [2, "always"],
+    "space-in-parens": [2, "never"]                                            // Jamais d'espaces entre les parenthèse
+  },
+  "globals": {
+    "require": false,
+    "module":  false,
+    "console": false,
+    "ln": false,    // @todo Doit être spécifique à Workflow only
+    "process": true // @todo Doit être spécifique à Workflow only
+  }
+}

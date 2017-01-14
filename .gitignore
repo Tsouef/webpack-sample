@@ -1,0 +1,8 @@
+# IDE
+.idea
+.phpintel
+tags
+
+node_modules
+/sample-site/node_modules
+/sample-modules/*/node_modules
